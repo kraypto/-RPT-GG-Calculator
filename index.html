@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>RPT Calculator | Gainers Ground</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="RPT Calc">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#090c10">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #090c10;
+    --panel: #10151c;
+    --panel-2: #0d1117;
+    --line: #1f2733;
+    --green: #a6ff2f;
+    --green-dim: #6fa621;
+    --white: #eef2f6;
+    --gray: #7c8794;
+    --red: #ff4d4d;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    background: var(--bg);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: -1px -1px;
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    padding: calc(48px + env(safe-area-inset-top)) 20px calc(48px + env(safe-area-inset-bottom));
+  }
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom: 28px;
+  }
+  .brand-mark{
+    width: 30px; height: 30px;
+    background: var(--green);
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 35% 35%, 35% 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+  .brand-name{
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+  h1{
+    font-family: 'Press Start 2P', monospace;
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--green);
+    margin: 0 0 6px;
+    text-shadow: 0 0 18px rgba(166,255,47,0.25);
+  }
+  .sub{
+    color: var(--gray);
+    font-size: 13px;
+    margin: 0 0 34px;
+    letter-spacing: 0.5px;
+  }
+  .formula{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 18px 20px;
+    margin-bottom: 32px;
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .formula b{ color: var(--white); font-weight: 700; }
+  .formula .op{ color: var(--green); font-size: 16px; }
+  .formula .frac{ display:flex; flex-direction:column; align-items:center; line-height:1.6; }
+  .formula .frac span{ border-top: 1px solid var(--gray); padding-top: 2px; }
+  .formula .frac span:first-child{ border-top:none; padding-top:0; }
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .field{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 16px 18px;
+  }
+  .field label{
+    display:block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .input-row{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+  }
+  .input-row:focus-within{
+    border-bottom-color: var(--green);
+  }
+  input[type="number"]{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    -moz-appearance: textfield;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .unit{
+    font-size: 13px;
+    color: var(--green-dim);
+    white-space: nowrap;
+  }
+  .err{
+    font-size: 11px;
+    color: var(--red);
+    min-height: 14px;
+    margin-top: 6px;
+    letter-spacing: 0.3px;
+  }
+
+  .results{
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--green);
+    padding: 22px 24px;
+  }
+  .results-title{
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 18px;
+  }
+  .result-row{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+  }
+  .result-row:first-of-type{ border-top: none; }
+  .result-label{
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .result-label small{
+    display:block;
+    font-size: 10px;
+    color: #4a5568;
+    margin-top: 2px;
+  }
+  .result-value{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .result-value.hero{
+    font-size: 30px;
+    color: var(--green);
+    text-shadow: 0 0 14px rgba(166,255,47,0.3);
+  }
+
+  .footer{
+    margin-top: 28px;
+    font-size: 11px;
+    color: #4a5568;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .footer b{ color: var(--green-dim); }
+
+  @media (max-width: 560px){
+    .grid{ grid-template-columns: 1fr; }
+    h1{ font-size: 20px; }
+    .formula{ font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-name">Gainers Ground</div>
+  </div>
+
+  <h1>RISK-PER-TRADE</h1>
+  <p class="sub">Work out exactly how much you're allowed to allocate on a trade.</p>
+
+  <div class="formula">
+    <div class="frac"><span><b>Portfolio</b> × <b>Risk %</b></span><span><b>Stop-loss %</b></span></div>
+    <span class="op">×</span>
+    <span><b>Leverage</b></span>
+    <span class="op">=</span>
+    <span style="color: var(--green);"><b>Position size</b></span>
+  </div>
+
+  <div class="grid">
+    <div class="field">
+      <label for="portfolio">Portfolio base</label>
+      <div class="input-row">
+        <input type="number" id="portfolio" placeholder="e.g. 3000" min="0" step="1" inputmode="decimal">
+        <span class="unit">USDT</span>
+      </div>
+      <div class="err" id="err-portfolio"></div>
+    </div>
+
+    <div class="field">
+      <label for="risk">Risk on this trade</label>
+      <div class="input-row">
+        <input type="number" id="risk" placeholder="e.g. 2" min="0" step="0.1" inputmode="decimal">
+        <span class="unit">%</span>
+      </div>
+      <div class="err" id="err-risk"></div>
+    </div>
+
+    <div class="field">
+      <label for="sl">Stop-loss distance</label>
+      <div class="input-row">
+        <input type="number" id="sl" placeholder="e.g. 5.78" min="0" step="0.01" inputmode="decimal">
+        <span class="unit">%</span>
+      </div>
+      <div class="err" id="err-sl"></div>
+    </div>
+
+    <div class="field">
+      <label for="leverage">Leverage</label>
+      <div class="input-row">
+        <input type="number" id="leverage" placeholder="e.g. 50" min="1" step="1" inputmode="decimal">
+        <span class="unit">x</span>
+      </div>
+      <div class="err" id="err-leverage"></div>
+    </div>
+
+    <div class="field" style="grid-column: 1 / -1;">
+      <label for="tp">Take-profit distance</label>
+      <div class="input-row">
+        <input type="number" id="tp" placeholder="e.g. 86.66" min="0" step="0.01" inputmode="decimal">
+        <span class="unit">%</span>
+      </div>
+      <div class="err" id="err-tp"></div>
+    </div>
+  </div>
+
+  <div class="results">
+    <div class="results-title">Result</div>
+    <div class="result-row">
+      <div class="result-label">Risk amount<small>Portfolio × Risk %</small></div>
+      <div class="result-value" id="out-risk">—</div>
+    </div>
+    <div class="result-row">
+      <div class="result-label">Position size (notional)<small>Risk amount ÷ Stop-loss %</small></div>
+      <div class="result-value" id="out-position">—</div>
+    </div>
+    <div class="result-row">
+      <div class="result-label">Margin to allocate<small>Position size ÷ Leverage — what you actually put up</small></div>
+      <div class="result-value hero" id="out-margin">—</div>
+    </div>
+    <div class="result-row">
+      <div class="result-label">Potential loss<small>(Stop-loss % × Leverage) × Margin</small></div>
+      <div class="result-value" id="out-loss" style="color: var(--red);">—</div>
+    </div>
+    <div class="result-row">
+      <div class="result-label">Potential gain<small>(Take-profit % × Leverage) × Margin</small></div>
+      <div class="result-value" id="out-gain" style="color: var(--green);">—</div>
+    </div>
+  </div>
+
+  <div class="footer">Not financial advice. Always size positions in line with your own risk tolerance. — <b>Gainers Ground</b></div>
+
+</div>
+
+<script>
+  var ids = ['portfolio','risk','sl','leverage','tp'];
+  var inputs = {};
+  ids.forEach(function(id){ inputs[id] = document.getElementById(id); });
+  var touched = false;
+
+  function fmt(n){
+    if (!isFinite(n)) return '—';
+    return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' USDT';
+  }
+
+  function setError(id, msg){
+    document.getElementById('err-' + id).textContent = touched ? (msg || '') : '';
+  }
+
+  function calculate(){
+    var valid = true;
+    var portfolio = parseFloat(inputs.portfolio.value);
+    var risk = parseFloat(inputs.risk.value);
+    var sl = parseFloat(inputs.sl.value);
+    var leverage = parseFloat(inputs.leverage.value);
+    var tp = parseFloat(inputs.tp.value);
+
+    setError('portfolio',''); setError('risk',''); setError('sl',''); setError('leverage',''); setError('tp','');
+
+    if (isNaN(portfolio) || portfolio <= 0){ setError('portfolio','Enter a portfolio amount'); valid = false; }
+    if (isNaN(risk) || risk <= 0){ setError('risk','Enter a risk %'); valid = false; }
+    if (isNaN(sl) || sl <= 0){ setError('sl','Enter a stop-loss %'); valid = false; }
+    if (isNaN(leverage) || leverage <= 0){ setError('leverage','Enter a leverage'); valid = false; }
+    if (isNaN(tp) || tp <= 0){ setError('tp','Enter a take-profit %'); valid = false; }
+
+    if (!valid){
+      document.getElementById('out-risk').textContent = '—';
+      document.getElementById('out-position').textContent = '—';
+      document.getElementById('out-margin').textContent = '—';
+      document.getElementById('out-loss').textContent = '—';
+      document.getElementById('out-gain').textContent = '—';
+      return;
+    }
+
+    var riskAmount = portfolio * (risk / 100);
+    var positionSize = riskAmount / (sl / 100);
+    var margin = positionSize / leverage;
+
+    var lossPct = (sl / 100) * leverage;
+    var gainPct = (tp / 100) * leverage;
+    var potentialLoss = lossPct * margin;
+    var potentialGain = gainPct * margin;
+
+    document.getElementById('out-risk').textContent = fmt(riskAmount);
+    document.getElementById('out-position').textContent = fmt(positionSize);
+    document.getElementById('out-margin').textContent = fmt(margin);
+    document.getElementById('out-loss').textContent = fmt(potentialLoss);
+    document.getElementById('out-gain').textContent = fmt(potentialGain);
+  }
+
+  ids.forEach(function(id){ inputs[id].addEventListener('input', function(){ touched = true; calculate(); }); });
+  calculate();
+</script>
+
+</body>
+</html>
